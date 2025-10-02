@@ -204,26 +204,17 @@
         </div>
         
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div
+          <MagicCard
             v-for="(site, index) in featuredSites"
             :key="site.id"
-            :ref="el => siteCardRefs[index] = el as HTMLElement"
-            @mousemove="(event) => handleSiteCardMouseMove(event, index)"
-            @mouseleave="() => handleSiteCardMouseLeave(index)"
-            class="relative bg-white/60 dark:bg-white/10 backdrop-blur-md border border-gray-300/40 dark:border-white/20 rounded-2xl overflow-hidden hover:bg-white/70 dark:hover:bg-white/15 hover:border-gray-400/50 dark:hover:border-white/30 transition-all duration-300 shadow-xl hover:shadow-2xl site-card"
+            :glow-color="index % 3 === 0 ? '236, 72, 153' : index % 3 === 1 ? '59, 130, 246' : '16, 185, 129'"
+            :spotlight-radius="300"
+            :enable-border-glow="true"
+            :enable-spotlight="true"
+            :click-effect="true"
+            class="site-card"
             :style="{ animationDelay: `${index * 0.1}s` }"
           >
-            <!-- 鼠标跟随效果 -->
-            <div 
-              v-if="siteCardEffects[index]?.show"
-              class="absolute w-40 h-40 rounded-full blur-2xl transition-all duration-75 ease-out pointer-events-none z-0"
-              :style="{
-                left: siteCardEffects[index]?.x - 80 + 'px',
-                top: siteCardEffects[index]?.y - 80 + 'px',
-                background: 'radial-gradient(circle, rgba(34, 197, 94, 0.6) 0%, rgba(34, 197, 94, 0.3) 30%, rgba(34, 197, 94, 0.15) 60%, transparent 90%)',
-                boxShadow: '0 0 80px rgba(34, 197, 94, 0.5), 0 0 160px rgba(34, 197, 94, 0.3)'
-              }"
-            ></div>
             <div class="aspect-video bg-gray-100/50 dark:bg-black/20 flex items-center justify-center overflow-hidden">
               <img
                 :src="site.image"
@@ -263,7 +254,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </MagicCard>
         </div>
         
         <div class="mt-8 text-center">
@@ -323,7 +314,7 @@
 </style>
 
 <script setup lang="ts">
-import { computed, ref, reactive } from 'vue'
+import { computed, ref } from 'vue'
 import { Eye, Mail, Code, ArrowRight, ExternalLink, Github, Phone } from 'lucide-vue-next'
 import { usePersonalStore } from '@/stores/personal'
 import { useProjectsStore } from '@/stores/projects'
@@ -333,29 +324,10 @@ import Card from '@/components/ui/Card.vue'
 import TenYearPromise from '@/components/ui/TenYearPromise.vue'
 import SplitText from '@/components/SplitText.vue'
 import ProjectMagicCard from '@/components/vue-bits/ProjectMagicCard.vue'
+import MagicCard from '@/components/ui/MagicCard.vue'
 import DotGrid from '@/components/DotGrid.vue'
 
 const dotGridRef = ref<InstanceType<typeof DotGrid>>()
-const siteCardRefs = ref<HTMLElement[]>([])
-const siteCardEffects = reactive<Record<number, { x: number; y: number; show: boolean }>>({})
-
-const handleSiteCardMouseMove = (event: MouseEvent, index: number) => {
-  const card = siteCardRefs.value[index]
-  if (!card) return
-  
-  const rect = card.getBoundingClientRect()
-  siteCardEffects[index] = {
-    x: event.clientX - rect.left,
-    y: event.clientY - rect.top,
-    show: true
-  }
-}
-
-const handleSiteCardMouseLeave = (index: number) => {
-  if (siteCardEffects[index]) {
-    siteCardEffects[index].show = false
-  }
-}
 
 const handleGlobalMouseMove = (event: MouseEvent) => {
   if (dotGridRef.value) {
