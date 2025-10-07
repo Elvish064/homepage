@@ -38,7 +38,8 @@
         <!-- 右侧操作区 -->
         <div class="flex items-center space-x-3">
           <ThemeToggle />
-          
+          <LanguageToggle />
+
           <!-- 移动端菜单按钮 -->
           <button
             @click="toggleMobileMenu"
@@ -78,6 +79,7 @@
 import { ref } from 'vue'
 import { usePersonalStore } from '@/stores/personal'
 import ThemeToggle from '@/components/ui/ThemeToggle.vue'
+import LanguageToggle from '@/components/ui/LanguageToggle.vue'
 
 const personalStore = usePersonalStore()
 const mobileMenuOpen = ref(false)

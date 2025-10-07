@@ -14,7 +14,7 @@
       <div class="absolute inset-0 bg-white/30 dark:bg-black/10 backdrop-blur-sm"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="text-3xl font-medium text-gray-900 dark:text-white mb-4 animate-fade-in drop-shadow-lg">
-          关于我
+          {{ t.about }}
         </h1>
         <p class="text-gray-700 dark:text-gray-200 animate-fade-in-delay drop-shadow-sm">
           喵喵喵~
@@ -274,7 +274,11 @@
 import { ref, reactive } from 'vue'
 import { MapPin, Mail, Github, Linkedin, Twitter, MessageCircle, Code, Music, Gamepad2 , Camera , Radio } from 'lucide-vue-next'
 import aboutData from '@/data/AboutView.json'
+import { useLocale } from '@/stores/locale'
+import { useI18n } from '@/locales'
 
+const { locale } = useLocale()
+const t = useI18n(locale.value)
 const aboutCardRefs = ref<HTMLElement[]>([])
 const aboutCardEffects = reactive<Record<number, { x: number; y: number; show: boolean }>>({})
 
