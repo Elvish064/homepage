@@ -1,20 +1,20 @@
 {
-  "name": "fishcpy",
+  "name": "Elvish",
   "title": "你好👋",
-  "bio": "平时喜欢折腾点新奇的玩意，偶尔做点小网站&小项目。",
-  "avatar": "https://www.fis.ink/img/logo_c.png",
-  "email": "fishcpy@qq.com",
-  "location": "中国",
-  "website": "https://blog.fis.ink",
+  "bio": "喵喵喵~",
+  "avatar": "https://r2.elvish.me/blog/assets/logo_c.png",
+  "email": "elvis@elvish.me",
+  "location": "China",
+  "website": "https://blog.elvish.me",
   "socialLinks": [
     {
       "platform": "GitHub",
-      "url": "https://github.com/fishcpy",
+      "url": "https://github.com/Elvish064",
       "icon": "github"
     },
     {
       "platform": "Blog",
-      "url": "https://blog.fis.ink",
+      "url": "https://blog.elvish.me",
       "icon": "globe"
     }
   ]

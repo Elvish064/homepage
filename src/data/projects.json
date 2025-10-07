@@ -1,22 +1,22 @@
 [
   {
     "id": "1",
-    "title": "个人主页",
-    "description": "就是本站啦",
-    "image": "https://api.fis.ink/mc",
-    "technologies": ["Vue3", "TypeScript"],
-    "demoUrl": "/",
-    "githubUrl": "https://github.com/fishcpy/small-shop",
+    "title": "Mizuki",
+    "description": "项目协作者",
+    "image": "https://pic.elvish.me:16666/api_v2.php?return=redirect&img_format=webp",
+    "technologies": ["Astro", "TypeScript","Tailwindcss"],
+    "demoUrl": "https://mizuki.mysqil.com/",
+    "githubUrl": "https://github.com/matsuzaka-yuki/Mizuki",
     "featured": true
   },
   {
     "id": "2",
     "title": "项目2",
     "description": "项目2",
-    "image": "https://api.fis.ink/mc",
+    "image": "https://pic.elvish.me:16666/api_v2.php?return=redirect&img_format=webp",
     "technologies": [],
     "demoUrl": "/",
-    "githubUrl": "https://github.com/fishcpy",
+    "githubUrl": "https://github.com/Elish064",
     "featured": false
   }
 ]
