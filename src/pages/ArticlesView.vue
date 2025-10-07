@@ -23,12 +23,12 @@
               <div class="bg-white/60 dark:bg-white/10 backdrop-blur-md border border-gray-300/40 dark:border-white/20 rounded-lg p-3 font-mono text-sm shadow-xl">
                 <span class="text-gray-700 dark:text-gray-200">RSS:</span>
                 <a 
-                  href="https://blog.fis.ink/atom.xml" 
+                  href="https://blog.elvish.me/rss.xml" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   class="ml-2 text-blue-600 dark:text-blue-400 hover:underline"
                 >
-                  https://blog.fis.ink/atom.xml
+                  https://blog.elvish.me/rss.xml
                 </a>
               </div>
             </div>

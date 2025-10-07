@@ -22,13 +22,14 @@
         </div>
 
         <div class="qr-codes">
+          <!--  
           <div 
             class="qr-card"
             :ref="el => qrCardRefs[0] = el as HTMLElement"
             @mousemove="(event) => handleQrCardMouseMove(event, 0)"
             @mouseleave="() => handleQrCardMouseLeave(0)"
           >
-            <!-- 鼠标跟随效果 -->
+            
             <div 
               v-if="qrCardEffects[0]?.show"
               class="absolute w-40 h-40 rounded-full blur-2xl transition-all duration-75 ease-out pointer-events-none z-0"
@@ -58,7 +59,7 @@
             @mousemove="(event) => handleQrCardMouseMove(event, 1)"
             @mouseleave="() => handleQrCardMouseLeave(1)"
           >
-            <!-- 鼠标跟随效果 -->
+            
             <div 
               v-if="qrCardEffects[1]?.show"
               class="absolute w-40 h-40 rounded-full blur-2xl transition-all duration-75 ease-out pointer-events-none z-0"
@@ -80,7 +81,7 @@
             </div>
             <p class="qr-description">扫一扫，请我喝杯咖啡</p>
           </div>
-          
+          -->
           <div 
             class="qr-card"
             :ref="el => qrCardRefs[2] = el as HTMLElement"
@@ -101,14 +102,12 @@
             <div class="qr-icon">
               <Heart class="w-8 h-8" />
             </div>
-            <h3>爱发电支持</h3>
-            <div class="qr-placeholder">
-              <img src="https://cdn.fis.ink/img/2025/02/11/67aad655d87f6.png" alt="爱发电二维码">
-            </div>
-            <p class="qr-description">在爱发电上支持我</p>
+            <h3>暂不开放赞助渠道</h3>
+           
+            <p class="qr-description">暂不开放赞助渠道</p>
             <div class="qr-actions">
-              <a href="https://afdian.com/a/fishcpy" class="afdian-link" target="_blank">
-                <ExternalLink class="w-4 h-4" /> 前往爱发电
+              <a href="/" class="afdian-link" target="_blank">
+                <ExternalLink class="w-4 h-4" /> 前往首页
               </a>
             </div>
           </div>
@@ -119,7 +118,7 @@
             <Mail class="w-5 h-5" />
           </div>
           <p class="notice-text">
-            <strong>重要提示：</strong>赞助了一定要给 <a href="mailto:fishcpy@qq.com" class="email">fishcpy@qq.com</a>发邮件，表明渠道和单号，和你自己名称和内容，否则我认不清可能加不上。
+            <strong>重要提示：</strong>赞助了一定要给 <a href="mailto:fishcpy@qq.com" class="email">elvish@elvish.me</a>发邮件，表明渠道和单号，和你自己名称和内容，否则我认不清可能加不上。
           </p>
         </div>
         

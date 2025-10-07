@@ -1,0 +1,92 @@
+{
+  "fullName": "Elvish",
+  "title": "你好👋",
+  "bio": "喵喵喵~",
+  "avatar": "https://r2.elvish.me/blog/assets/logo_c.png",
+  "contactEmail": "elvis@elvish.me",
+  "location": "China",
+  "website": "https://blog.elvish.me",
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/Elvish064",
+      "icon": "github"
+    },
+    {
+      "platform": "Blog",
+      "url": "https://blog.elvish.me",
+      "icon": "globe"
+    }
+  ],
+  "experiences": [
+    {
+      "position": "搭建了homepage",
+      "company": "一眼就喜欢上了这个模板",
+      "period": "2025-10-07",
+      "description": "感谢fishcpy的开源"
+    },
+    {
+      "position": "萌ICP20250030号",
+      "company": "申请萌ICP20250030号备案",
+      "period": "2025-01-01",
+      "description": "次日通过"
+    },
+    {
+      "position": "fuwari博客",
+      "company": "根据Astro官方文档，改用Cloudflare Pages进行部署",
+      "period": "2024-12-29",
+      "description": "绑定域名elvish.me"
+    },
+    {
+      "position": "在Spaceship购入elvish.me域名",
+      "company": "我的正式域名",
+      "period": "2024-12-28",
+      "description": "有点小贵"
+    },
+    {
+      "position": "新的转机",
+      "company": "在Github发现Fuwari这个项目",
+      "period": "2024-12-27",
+      "description": "非常喜欢其ui和无后端的设计"
+    },
+    {
+      "position": "搭建博客的尝试",
+      "company": "尝试使用Halo搭建博客",
+      "period": "2024-10-02",
+      "description": "使用Cloudflare代理以去除域名后的端口号"
+    },
+    {
+      "position": "获取公网ipv4",
+      "company": "电信真坑钱",
+      "period": "2024-10-01",
+      "description": "发现了诸多弊端，运营商封禁了80与443端口"
+    },
+    {
+      "position": "我的第一个域名",
+      "company": "在US.KG注册免费域名elvish.us.kg",
+      "period": "2024-09-22",
+      "description": "现已弃用"
+    },
+    {
+      "position": "一个想法......",
+      "company": "初次有了搭建博客的想法",
+      "period": "2024-07",
+      "description": "在Dynv6注册免费域名elvish.dynv6.net"
+    }
+  ],
+  "education": [
+    {
+      "degree": "暂时保密",
+      "institution": "霍格沃兹",
+      "period": "2021 - 2025",
+      "description": "喵"
+    }
+  ],
+  "interests": [
+    { "name": "编程", "icon": "code" },
+    { "name": "音乐", "icon": "music" },
+    { "name": "游戏", "icon": "gamepad2" },
+    { "name": "摄影", "icon": "camera" },
+    { "name": "业余无线电", "icon": "radio" }
+  ]
+}

@@ -1,7 +1,7 @@
 import type { Article, RSSFeed } from '@/types'
 
 export class RSSService {
-  private static readonly RSS_URL = 'https://api.fis.ink/fishcpy/v1/fishcpyblog-rss'
+  private static readonly RSS_URL = 'https://blog.elvish.me/rss.xml'
 
   static async fetchArticles(): Promise<Article[]> {
     try {

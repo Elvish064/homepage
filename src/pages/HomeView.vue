@@ -116,7 +116,7 @@
             我的项目
           </h2>
           <p class="text-gray-700 dark:text-gray-200 drop-shadow-sm">
-            乱七八糟的东西
+            My Projects
           </p>
         </div>
         
@@ -199,7 +199,7 @@
             网站
           </h2>
           <p class="text-gray-700 dark:text-gray-200 drop-shadow-sm">
-            一些在线的东西
+            Websites
           </p>
         </div>
         

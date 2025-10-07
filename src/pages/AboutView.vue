@@ -17,7 +17,7 @@
           关于我
         </h1>
         <p class="text-gray-700 dark:text-gray-200 animate-fade-in-delay drop-shadow-sm">
-          一个喜欢折腾代码的人
+          喵喵喵~
         </p>
       </div>
     </section>
@@ -32,33 +32,33 @@
             <div class="sticky top-8">
               <div class="text-center animate-fade-in-up">
                 <img
-                  :src="personalStore.avatar"
-                  :alt="personalStore.fullName"
+                  :src="aboutData.avatar"
+                  :alt="aboutData.fullName"
                   class="w-32 h-32 rounded-full mx-auto object-cover mb-4"
                 />
                 <h2 class="text-lg font-medium text-gray-900 dark:text-white mb-1">
-                  {{ personalStore.fullName }}
+                  {{ aboutData.fullName }}
                 </h2>
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                  {{ personalStore.info.title }}
+                  {{ aboutData.title }}
                 </p>
                 <div class="flex items-center justify-center text-gray-500 dark:text-gray-400 text-sm mb-6">
                   <MapPin class="w-3 h-3 mr-1" />
-                  {{ personalStore.info.location }}
+                  {{ aboutData.location }}
                 </div>
                 
                 <div class="space-y-3">
                   <a
-                    :href="`mailto:${personalStore.contactEmail}`"
+                    :href="`mailto:${aboutData.contactEmail}`"
                     class="inline-flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
                   >
                     <Mail class="w-4 h-4 mr-2" />
-                    发邮件
+                    Email Me
                   </a>
                   
                   <div class="flex justify-center space-x-3">
                     <a
-                      v-for="link in personalStore.socialLinks"
+                      v-for="link in aboutData.socialLinks"
                       :key="link.platform"
                       :href="link.url"
                       target="_blank"
@@ -97,10 +97,7 @@
               <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">关于我</h3>
               <div class="relative z-10 text-gray-700 dark:text-gray-200 space-y-4 leading-relaxed">
                 <p class="drop-shadow-sm">
-                  {{ personalStore.info.bio }}
-                </p>
-                <p class="drop-shadow-sm">
-                  --占位符--
+                  {{ aboutData.bio }}
                 </p>
               </div>
             </div>
@@ -125,26 +122,26 @@
               ></div>
               <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">站点历程</h3>
               <div class="relative z-10 space-y-6">
-                <div v-for="(experience, index) in experiences" :key="index" class="relative timeline-item hover:bg-white/40 dark:hover:bg-white/5 rounded-lg p-3 -m-3 backdrop-blur-sm">
-                  <div class="timeline-content">
-                    <div class="flex items-start">
-                      <div class="flex-shrink-0">
-                        <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 timeline-dot"></div>
-                      </div>
-                    <div class="ml-4">
-                      <div class="pb-6">
-                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                          <h4 class="font-medium text-gray-900 dark:text-white drop-shadow-sm">{{ experience.position }}</h4>
-                          <span class="text-sm text-gray-600 dark:text-gray-300 drop-shadow-sm">{{ experience.period }}</span>
-                        </div>
-                        <p class="text-gray-700 dark:text-gray-200 text-sm mb-2 drop-shadow-sm">{{ experience.company }}</p>
-                        <p class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed drop-shadow-sm">{{ experience.description }}</p>
-                      </div>
-                    </div>
-                    </div>
-                    <div v-if="index < experiences.length - 1" class="absolute left-1 top-4 w-px h-6 bg-gray-200 dark:bg-gray-700 timeline-line"></div>
-                  </div>
-                </div>
+                <div v-for="(experience, index) in aboutData.experiences" :key="index" class="relative timeline-item hover:bg-white/40 dark:hover:bg-white/5 rounded-lg p-3 -m-3 backdrop-blur-sm">
+  <div class="timeline-content relative">
+    <span class="absolute right-4 top-4 text-sm text-gray-600 dark:text-gray-300 drop-shadow-sm">
+      {{ experience.period }}
+    </span>
+    <div class="flex items-start">
+      <div class="flex-shrink-0">
+        <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 timeline-dot"></div>
+      </div>
+      <div class="ml-4">
+        <div class="pb-6">
+          <h4 class="font-medium text-gray-900 dark:text-white drop-shadow-sm">{{ experience.position }}</h4>
+          <p class="text-gray-700 dark:text-gray-200 text-sm mb-2 mt-2 drop-shadow-sm">{{ experience.company }}</p>
+          <p class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed drop-shadow-sm">{{ experience.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div v-if="index < aboutData.experiences.length - 1" class="absolute left-1 top-4 w-px h-6 bg-gray-200 dark:bg-gray-700 timeline-line"></div>
+  </div>
+</div>
               </div>
             </div>
             
@@ -157,27 +154,45 @@
             >
               <!-- 鼠标跟随效果 -->
               <div 
-                v-if="aboutCardEffects[2]?.show"
-                class="absolute w-40 h-40 rounded-full blur-2xl transition-all duration-75 ease-out pointer-events-none z-0"
-                :style="{
-                  left: aboutCardEffects[2]?.x - 80 + 'px',
-                   top: aboutCardEffects[2]?.y - 80 + 'px',
-                   background: 'radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, rgba(168, 85, 247, 0.3) 30%, rgba(168, 85, 247, 0.15) 60%, transparent 90%)',
-                   boxShadow: '0 0 80px rgba(168, 85, 247, 0.5), 0 0 160px rgba(168, 85, 247, 0.3)'
-                }"
+              v-if="aboutCardEffects[2]?.show"
+              class="absolute w-40 h-40 rounded-full blur-2xl transition-all duration-75 ease-out pointer-events-none z-0"
+              :style="{
+                left: aboutCardEffects[2]?.x - 80 + 'px',
+                 top: aboutCardEffects[2]?.y - 80 + 'px',
+                 background: 'radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, rgba(168, 85, 247, 0.3) 30%, rgba(168, 85, 247, 0.15) 60%, transparent 90%)',
+                 boxShadow: '0 0 80px rgba(168, 85, 247, 0.5), 0 0 160px rgba(168, 85, 247, 0.3)'
+              }"
               ></div>
-              <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">--2大占位符--</h3>
-              <div class="relative z-10 flex items-start">
+              <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">教育经历</h3>
+              <div class="relative z-10 space-y-6">
+              <div v-if="aboutData.education && aboutData.education.length">
+                <div v-for="(edu, idx) in aboutData.education" :key="idx" class="relative flex items-start timeline-item hover:bg-white/40 dark:hover:bg-white/5 rounded-lg p-3 -m-3 backdrop-blur-sm">
+  <span class="absolute right-4 top-4 text-sm text-gray-600 dark:text-gray-300 drop-shadow-sm">
+    {{ edu.period }}
+  </span>
+  <div class="flex-shrink-0">
+    <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mt-2"></div>
+  </div>
+  <div class="ml-4 w-full">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+      <h4 class="font-medium text-gray-900 dark:text-white drop-shadow-sm">{{ edu.degree }} - {{ edu.institution }}</h4>
+    </div>
+    <p class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed drop-shadow-sm">{{ edu.description }}</p>
+  </div>
+</div>
+              </div>
+              <div v-else class="flex items-start">
                 <div class="flex-shrink-0">
-                  <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mt-2"></div>
+                <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mt-2"></div>
                 </div>
                 <div class="ml-4">
-                  <h4 class="font-medium text-gray-900 dark:text-white mb-1 drop-shadow-sm">--2.1小占位符--</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-2 drop-shadow-sm">--2.2小占位符--</p>
-                  <p class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed drop-shadow-sm">
-                    --2.3小占位符--
-                  </p>
+                <h4 class="font-medium text-gray-900 dark:text-white mb-1 drop-shadow-sm">暂无数据</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-2 drop-shadow-sm">请在 aboutData.json 中补充 education 字段</p>
+                <p class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed drop-shadow-sm">
+                  你可以在 data/AboutView.json 添加 education 信息
+                </p>
                 </div>
+              </div>
               </div>
             </div>
             
@@ -202,11 +217,11 @@
               <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">兴趣爱好</h3>
               <div class="relative z-10 flex flex-wrap gap-3">
                 <div
-                  v-for="interest in interests"
+                  v-for="interest in aboutData.interests"
                   :key="interest.name"
                   class="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white cursor-default bg-white/40 dark:bg-white/5 backdrop-blur-sm rounded-xl px-3 py-2 border border-gray-200/30 dark:border-white/10"
                 >
-                  <component :is="interest.icon" class="w-4 h-4 drop-shadow-sm" />
+                  <component :is="getIcon(interest.icon)" class="w-4 h-4 drop-shadow-sm" />
                   <span class="text-sm drop-shadow-sm">{{ interest.name }}</span>
                 </div>
               </div>
@@ -235,15 +250,15 @@
                 <div class="flex items-center text-gray-700 dark:text-gray-200">
                   <Mail class="w-4 h-4 mr-3 drop-shadow-sm" />
                   <a 
-                    :href="`mailto:${personalStore.contactEmail}`"
+                    :href="`mailto:${aboutData.contactEmail}`"
                     class="hover:text-blue-500 dark:hover:text-blue-400 hover:underline drop-shadow-sm"
                   >
-                    {{ personalStore.contactEmail }}
+                    {{ aboutData.contactEmail }}
                   </a>
                 </div>
                 <div class="flex items-center text-gray-700 dark:text-gray-200">
                   <MapPin class="w-4 h-4 mr-3 drop-shadow-sm" />
-                  <span class="drop-shadow-sm">{{ personalStore.info.location }}</span>
+                  <span class="drop-shadow-sm">{{ aboutData.location }}</span>
                 </div>
               </div>
             </div>
@@ -257,9 +272,8 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { MapPin, Mail, Briefcase, GraduationCap, Github, Linkedin, Twitter, MessageCircle, Code, Camera, Music, Gamepad2 } from 'lucide-vue-next'
-import { usePersonalStore } from '@/stores/personal'
-import Card from '@/components/ui/Card.vue'
+import { MapPin, Mail, Github, Linkedin, Twitter, MessageCircle, Code, Music, Gamepad2 , Camera , Radio } from 'lucide-vue-next'
+import aboutData from '@/data/AboutView.json'
 
 const aboutCardRefs = ref<HTMLElement[]>([])
 const aboutCardEffects = reactive<Record<number, { x: number; y: number; show: boolean }>>({})
@@ -282,58 +296,16 @@ const handleAboutCardMouseLeave = (index: number) => {
   }
 }
 
-const personalStore = usePersonalStore()
-
-const experiences = [
-  {
-    position: '使用vue3和AI开发新主页',
-    company: '看不见我---',
-    period: '2025.8',
-    description: '就是本站啦。'
-  },
-  {
-    position: '给ink备案啦',
-    company: '7.29提交的管理局，8.7号终于通过了',
-    period: '2025-8',
-    description: '大陆CDN，启动！'
-  },
-  {
-    position: '注册第一个ink',
-    company: 'ink有好多3位域名哎，',
-    period: '2025-6',
-    description: '果断注册fis.ink，续费还可以'
-  },
-  {
-    position: '注册第一个top',
-    company: 'cn居然隐私保护要花钱！',
-    period: '2025-3',
-    description: '注册top并迁移大量服务到top，cn不续了！'
-  },
-  {
-    position: '注册第一个正式意义上的域名',
-    company: '注册了一个cn，',
-    period: '2024-11',
-    description: '好开心。'
-  },
-  {
-    position: '第一个域名',
-    company: '跟着技术爬爬虾注册了第一个域名,',
-    period: '2024.7',
-    description: '是cloudns.be的子域，并注册cloudflare账号'
-  }
-]
-
-const interests = [
-  { name: '编程', icon: Code },
-  { name: '音乐', icon: Music },
-  { name: '游戏', icon: Gamepad2 }
-]
-
 const iconMap = {
   github: Github,
   linkedin: Linkedin,
   twitter: Twitter,
-  'message-circle': MessageCircle
+  code: Code,
+  music: Music,
+  gamepad2: Gamepad2,
+  globe: MessageCircle,
+  camera: Camera,
+  radio: Radio
 }
 
 const getIcon = (iconName: string) => {
@@ -387,8 +359,6 @@ const getIcon = (iconName: string) => {
 .timeline-item:nth-child(5) { animation-delay: 0.5s; }
 .timeline-item:nth-child(6) { animation-delay: 0.6s; }
 
-
-
 .timeline-line {
   animation: drawLine 0.8s ease-out;
   transform-origin: top;
@@ -402,10 +372,4 @@ const getIcon = (iconName: string) => {
     transform: scaleY(1);
   }
 }
-
-
-
-
-
-
 </style>

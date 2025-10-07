@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Mizuki",
     "description": "项目协作者",
-    "image": "https://pic.elvish.me:16666/api_v2.php?return=redirect&img_format=webp",
+    "image": "https://github.com/matsuzaka-yuki/Mizuki/raw/master/README.png",
     "technologies": ["Astro", "TypeScript","Tailwindcss"],
     "demoUrl": "https://mizuki.mysqil.com/",
     "githubUrl": "https://github.com/matsuzaka-yuki/Mizuki",
