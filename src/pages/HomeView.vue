@@ -268,7 +268,7 @@
       </div>
     </section>
 
-    <!-- Ten Year Promise Section -->
+    <!-- Ten Year Promise Section 
     <section class="py-20 bg-gray-50 dark:bg-gray-800">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 animate-fade-in-up">
@@ -283,7 +283,7 @@
         <TenYearPromise />
       </div>
     </section>
-
+     -->
 
   </div>
 </template>

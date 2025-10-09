@@ -272,7 +272,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { MapPin, Mail, Github, Linkedin, Twitter, MessageCircle, Code, Music, Gamepad2 , Camera , Radio } from 'lucide-vue-next'
+import { MapPin, Mail, Github, Linkedin, Twitter, MessageCircle, Code, Music, Gamepad2 , Camera , Radio , Film } from 'lucide-vue-next'
 import aboutData from '@/data/AboutView.json'
 
 const aboutCardRefs = ref<HTMLElement[]>([])
@@ -305,7 +305,8 @@ const iconMap = {
   gamepad2: Gamepad2,
   globe: MessageCircle,
   camera: Camera,
-  radio: Radio
+  radio: Radio,
+  film: Film
 }
 
 const getIcon = (iconName: string) => {

@@ -83,10 +83,11 @@
     }
   ],
   "interests": [
-    { "name": "编程", "icon": "code" },
-    { "name": "音乐", "icon": "music" },
-    { "name": "游戏", "icon": "gamepad2" },
-    { "name": "摄影", "icon": "camera" },
-    { "name": "业余无线电", "icon": "radio" }
+    { "name": "Coding", "icon": "code" },
+    { "name": "Music", "icon": "music" },
+    { "name": "Gaming", "icon": "gamepad2" },
+    { "name": "Photography", "icon": "camera" },
+    { "name": "HAM", "icon": "radio" },
+    { "name": "Anime", "icon": "film" }
   ]
 }
