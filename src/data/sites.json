@@ -6,6 +6,7 @@
     "image": "https://pic.elvish.me:16666/api_v2.php?return=redirect&img_format=webp",
     "technologies": ["Fuwari", "Astro"],
     "url": "https://blog.elvish.me",
+    "githubUrl": "https://github.com/Elvish064/Mizuki",
     "featured": true,
     "createdAt": "2024-10-01"
   }
