@@ -14,7 +14,7 @@
           <div class="col-span-1 md:col-span-2">
             <div class="flex items-center space-x-2 mb-4">
               <div class="w-8 h-8 rounded-lg overflow-hidden">
-                <img src="https://r2.elvish.me/blog/assets/logo_c.png" alt="Elvish logo" class="w-full h-full object-cover" />
+                <img src="/img/logo_c.png" alt="Elvish logo" class="w-full h-full object-cover" />
               </div>
               <span class="font-semibold text-xl">{{ personalStore.fullName }}</span>
             </div>
