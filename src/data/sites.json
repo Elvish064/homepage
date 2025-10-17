@@ -3,10 +3,32 @@
     "id": "1",
     "title": "Blog",
     "description": "This is my personal blog site where I share my thoughts and projects.",
-    "image": "https://pic.elvish.me:16666/api_v2.php?return=redirect&img_format=webp",
+    "image": "https://api.elvish.me:16666/pic/1",
     "technologies": ["Fuwari", "Astro"],
     "url": "https://blog.elvish.me",
     "githubUrl": "https://github.com/Elvish064/Mizuki",
+    "featured": true,
+    "createdAt": "2024-10-01"
+  },
+  {
+    "id": "2",
+    "title": "Status Monitor",
+    "description": "A site to monitor the status of various services and applications.",
+    "image": "https://api.elvish.me:16666/pic/2",
+    "technologies": ["UptimeKuma"],
+    "url": "https://uptime.elvish.me:16666/status/web",
+    "githubUrl": "",
+    "featured": true,
+    "createdAt": "2024-10-01"
+  },
+  {
+    "id": "3",
+    "title": "戳一戳 Elvish",
+    "description": "A site to send IM messages to Elvish.",
+    "image": "https://api.elvish.me:16666/pic/3",
+    "technologies": ["Node.js"],
+    "url": "https://nudge.elvish.me/",
+    "githubUrl": "",
     "featured": true,
     "createdAt": "2024-10-01"
   }

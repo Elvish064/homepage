@@ -13,7 +13,7 @@
     "id": "2",
     "title": "项目2",
     "description": "项目2",
-    "image": "https://pic.elvish.me:16666/api_v2.php?return=redirect&img_format=webp",
+    "image": "https://api.elvish.me:16666/pic/3",
     "technologies": [],
     "demoUrl": "/",
     "githubUrl": "https://github.com/Elish064",
