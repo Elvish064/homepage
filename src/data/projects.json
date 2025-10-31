@@ -2,6 +2,7 @@
   {
     "id": "1",
     "title": "Mizuki",
+    "createdAt": "2025-10-01",
     "description": "项目协作者",
     "image": "https://r2.elvish.me/homepage/projects/Mizuki.webp",
     "technologies": ["Astro", "TypeScript","Tailwindcss"],
@@ -11,12 +12,13 @@
   },
   {
     "id": "2",
-    "title": "项目2",
-    "description": "项目2",
-    "image": "https://api.elvish.me:16666/pic/3",
-    "technologies": [],
-    "demoUrl": "/",
-    "githubUrl": "https://github.com/Elish064",
-    "featured": false
+    "title": "Mini-cover",
+    "createdAt": "2025-10-31",
+    "description": "Fork, 新增了若干功能",
+    "image": "https://r2.elvish.me/homepage/projects/minicover.webp",
+    "technologies": ["node"],
+    "demoUrl": "https://cover.elvish.me",
+    "githubUrl": "https://github.com/Elvish064/Mini-Cover",
+    "featured": true
   }
 ]

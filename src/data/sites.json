@@ -23,14 +23,36 @@
   },
   {
     "id": "3",
+    "title": "Node Monitor",
+    "description": "A site to monitor the status of servers.",
+    "image": "https://api.elvish.me:16666/pic/3",
+    "technologies": ["UptimeKuma"],
+    "url": "https://node.elvish.me:16666",
+    "githubUrl": "",
+    "featured": true,
+    "createdAt": "2025-10-31"
+  },
+  {
+    "id": "4",
     "title": "戳一戳 Elvish",
     "description": "A site to send IM messages to Elvish.",
-    "image": "https://api.elvish.me:16666/pic/3",
+    "image": "https://api.elvish.me:16666/pic/4",
     "technologies": ["Node.js"],
     "url": "https://nudge.elvish.me/",
     "githubUrl": "",
     "featured": true,
     "createdAt": "2024-10-01"
+  },
+  {
+    "id": "5",
+    "title": "Mini Cover Maker",
+    "description": "A site to create cover images.",
+    "image": "https://api.elvish.me:16666/pic/5",
+    "technologies": ["Node.js"],
+    "url": "https://cover.elvish.me/",
+    "githubUrl": "https://github.com/Elvish064/Mini-Cover",
+    "featured": true,
+    "createdAt": "2025-10-31"
   }
  
 ]

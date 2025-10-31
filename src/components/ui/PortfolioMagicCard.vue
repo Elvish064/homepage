@@ -83,7 +83,7 @@
     
     <!-- Date -->
     <div class="relative z-10 text-xs text-gray-600 dark:text-gray-400 mb-3 drop-shadow-sm">
-      {{ formatDate(project.createdAt) }}
+      {{ project.createdAt }}
     </div>
     
     <!-- Links -->
