@@ -102,48 +102,40 @@
               </div>
             </div>
             
-            <!-- Experience Timeline -->
+            
+            <!-- Interests -->
             <div 
               class="relative animate-fade-in-up bg-white/60 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-gray-300/40 dark:border-white/20 shadow-xl"
-              :ref="el => aboutCardRefs[1] = el as HTMLElement"
-              @mousemove="(event) => handleAboutCardMouseMove(event, 1)"
-              @mouseleave="() => handleAboutCardMouseLeave(1)"
+              :ref="el => aboutCardRefs[3] = el as HTMLElement"
+              @mousemove="(event) => handleAboutCardMouseMove(event, 3)"
+              @mouseleave="() => handleAboutCardMouseLeave(3)"
             >
               <!-- 鼠标跟随效果 -->
               <div 
-                v-if="aboutCardEffects[1]?.show"
+                v-if="aboutCardEffects[3]?.show"
                 class="absolute w-40 h-40 rounded-full blur-2xl transition-all duration-75 ease-out pointer-events-none z-0"
                 :style="{
-                  left: aboutCardEffects[1]?.x - 80 + 'px',
-                   top: aboutCardEffects[1]?.y - 80 + 'px',
-                   background: 'radial-gradient(circle, rgba(34, 197, 94, 0.6) 0%, rgba(34, 197, 94, 0.3) 30%, rgba(34, 197, 94, 0.15) 60%, transparent 90%)',
-                   boxShadow: '0 0 80px rgba(34, 197, 94, 0.5), 0 0 160px rgba(34, 197, 94, 0.3)'
+                  left: aboutCardEffects[3]?.x - 80 + 'px',
+                   top: aboutCardEffects[3]?.y - 80 + 'px',
+                   background: 'radial-gradient(circle, rgba(236, 72, 153, 0.6) 0%, rgba(236, 72, 153, 0.3) 30%, rgba(236, 72, 153, 0.15) 60%, transparent 90%)',
+                   boxShadow: '0 0 80px rgba(236, 72, 153, 0.5), 0 0 160px rgba(236, 72, 153, 0.3)'
                 }"
               ></div>
-              <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">站点历程</h3>
-              <div class="relative z-10 space-y-6">
-                <div v-for="(experience, index) in aboutData.experiences" :key="index" class="relative timeline-item hover:bg-white/40 dark:hover:bg-white/5 rounded-lg p-3 -m-3 backdrop-blur-sm">
-  <div class="timeline-content relative">
-    <span class="absolute right-4 top-4 text-sm text-gray-600 dark:text-gray-300 drop-shadow-sm">
-      {{ experience.period }}
-    </span>
-    <div class="flex items-start">
-      <div class="flex-shrink-0">
-        <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 timeline-dot"></div>
-      </div>
-      <div class="ml-4">
-        <div class="pb-6">
-          <h4 class="font-medium text-gray-900 dark:text-white drop-shadow-sm">{{ experience.position }}</h4>
-          <p class="text-gray-700 dark:text-gray-200 text-sm mb-2 mt-2 drop-shadow-sm">{{ experience.company }}</p>
-          <p class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed drop-shadow-sm">{{ experience.description }}</p>
-        </div>
-      </div>
-    </div>
-    <div v-if="index < aboutData.experiences.length - 1" class="absolute left-1 top-4 w-px h-6 bg-gray-200 dark:bg-gray-700 timeline-line"></div>
-  </div>
-</div>
+              <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">兴趣爱好</h3>
+              <div class="relative z-10 flex flex-wrap gap-3">
+                <div
+                  v-for="interest in aboutData.interests"
+                  :key="interest.name"
+                  class="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white cursor-default bg-white/40 dark:bg-white/5 backdrop-blur-sm rounded-xl px-3 py-2 border border-gray-200/30 dark:border-white/10"
+                >
+                  <component :is="getIcon(interest.icon)" class="w-4 h-4 drop-shadow-sm" />
+                  <span class="text-sm drop-shadow-sm">{{ interest.name }}</span>
+                </div>
               </div>
             </div>
+
+            
+
             
             <!-- Education -->
             <div 
@@ -196,37 +188,53 @@
               </div>
             </div>
             
-            <!-- Interests -->
+            
+            
+            
+
+            <!-- Experience Timeline -->
             <div 
               class="relative animate-fade-in-up bg-white/60 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-gray-300/40 dark:border-white/20 shadow-xl"
-              :ref="el => aboutCardRefs[3] = el as HTMLElement"
-              @mousemove="(event) => handleAboutCardMouseMove(event, 3)"
-              @mouseleave="() => handleAboutCardMouseLeave(3)"
+              :ref="el => aboutCardRefs[1] = el as HTMLElement"
+              @mousemove="(event) => handleAboutCardMouseMove(event, 1)"
+              @mouseleave="() => handleAboutCardMouseLeave(1)"
             >
               <!-- 鼠标跟随效果 -->
               <div 
-                v-if="aboutCardEffects[3]?.show"
+                v-if="aboutCardEffects[1]?.show"
                 class="absolute w-40 h-40 rounded-full blur-2xl transition-all duration-75 ease-out pointer-events-none z-0"
                 :style="{
-                  left: aboutCardEffects[3]?.x - 80 + 'px',
-                   top: aboutCardEffects[3]?.y - 80 + 'px',
-                   background: 'radial-gradient(circle, rgba(236, 72, 153, 0.6) 0%, rgba(236, 72, 153, 0.3) 30%, rgba(236, 72, 153, 0.15) 60%, transparent 90%)',
-                   boxShadow: '0 0 80px rgba(236, 72, 153, 0.5), 0 0 160px rgba(236, 72, 153, 0.3)'
+                  left: aboutCardEffects[1]?.x - 80 + 'px',
+                   top: aboutCardEffects[1]?.y - 80 + 'px',
+                   background: 'radial-gradient(circle, rgba(34, 197, 94, 0.6) 0%, rgba(34, 197, 94, 0.3) 30%, rgba(34, 197, 94, 0.15) 60%, transparent 90%)',
+                   boxShadow: '0 0 80px rgba(34, 197, 94, 0.5), 0 0 160px rgba(34, 197, 94, 0.3)'
                 }"
               ></div>
-              <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">兴趣爱好</h3>
-              <div class="relative z-10 flex flex-wrap gap-3">
-                <div
-                  v-for="interest in aboutData.interests"
-                  :key="interest.name"
-                  class="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white cursor-default bg-white/40 dark:bg-white/5 backdrop-blur-sm rounded-xl px-3 py-2 border border-gray-200/30 dark:border-white/10"
-                >
-                  <component :is="getIcon(interest.icon)" class="w-4 h-4 drop-shadow-sm" />
-                  <span class="text-sm drop-shadow-sm">{{ interest.name }}</span>
-                </div>
+              <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">站点历程</h3>
+              <div class="relative z-10 space-y-6">
+                <div v-for="(experience, index) in aboutData.experiences" :key="index" class="relative timeline-item hover:bg-white/40 dark:hover:bg-white/5 rounded-lg p-3 -m-3 backdrop-blur-sm">
+  <div class="timeline-content relative">
+    <span class="absolute right-4 top-4 text-sm text-gray-600 dark:text-gray-300 drop-shadow-sm">
+      {{ experience.period }}
+    </span>
+    <div class="flex items-start">
+      <div class="flex-shrink-0">
+        <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 timeline-dot"></div>
+      </div>
+      <div class="ml-4">
+        <div class="pb-6">
+          <h4 class="font-medium text-gray-900 dark:text-white drop-shadow-sm">{{ experience.position }}</h4>
+          <p class="text-gray-700 dark:text-gray-200 text-sm mb-2 mt-2 drop-shadow-sm">{{ experience.company }}</p>
+          <p class="text-gray-700 dark:text-gray-200 text-sm leading-relaxed drop-shadow-sm">{{ experience.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div v-if="index < aboutData.experiences.length - 1" class="absolute left-1 top-4 w-px h-6 bg-gray-200 dark:bg-gray-700 timeline-line"></div>
+  </div>
+</div>
               </div>
             </div>
-            
+
             <!-- Contact Section -->
             <div 
               class="relative animate-fade-in-up bg-white/60 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-gray-300/40 dark:border-white/20 shadow-xl"
@@ -262,6 +270,10 @@
                 </div>
               </div>
             </div>
+
+
+
+
           </div>
         </div>
       </div>
