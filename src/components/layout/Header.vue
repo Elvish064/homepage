@@ -7,7 +7,7 @@
           <router-link to="/" class="flex items-center space-x-3">
             <div class="w-8 h-8 rounded-full overflow-hidden">
               <img 
-                src="/img/logo_c.png" 
+                src="https://r2.elvish.me/blog/assets/logo_c.webp" 
                 alt="Elvish logo" 
                 class="w-full h-full object-cover" 
               />
