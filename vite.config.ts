@@ -7,6 +7,15 @@ import Inspector from 'unplugin-vue-dev-locator/vite'
 export default defineConfig({
   build: {
     sourcemap: 'hidden',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': ['vue', 'vue-router', 'pinia'],
+          'gsap': ['gsap'],
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000,
   },
   plugins: [
     vue(),

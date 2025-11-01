@@ -31,10 +31,12 @@
         <!-- Avatar (Mobile First) -->
         <div class="flex-shrink-0 mb-8 lg:mb-0 lg:order-2 lg:ml-12">
           <div class="relative">
-            <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white/20 dark:border-white/10 shadow-2xl backdrop-blur-sm">
+            <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white/20 dark:border-white/10 shadow-2xl backdrop-blur-sm bg-gray-200 dark:bg-gray-700">
               <img
                 :src="personalStore.info.avatar"
                 :alt="personalStore.fullName"
+                loading="eager"
+                fetchpriority="high"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -140,6 +142,8 @@
               <img
                 :src="project.image"
                 :alt="project.title"
+                loading="lazy"
+                decoding="async"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -219,6 +223,8 @@
               <img
                 :src="site.image"
                 :alt="site.title"
+                loading="lazy"
+                decoding="async"
                 class="w-full h-full object-cover"
               />
             </div>
