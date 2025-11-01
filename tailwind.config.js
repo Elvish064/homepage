@@ -8,6 +8,9 @@ export default {
       center: true,
     },
     extend: {
+      fontFamily: {
+        sans: ['Blueaka', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Noto Sans', 'Helvetica', 'Arial', 'sans-serif'],
+      },
       backdropFilter: {
         'none': 'none',
         'blur': 'blur(20px)',
