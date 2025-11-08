@@ -31,14 +31,11 @@
           <div class="lg:col-span-1">
             <div class="sticky top-8">
               <div class="text-center animate-fade-in-up">
-                <div class="w-32 h-32 rounded-full mx-auto mb-4 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                  <img
-                    :src="aboutData.avatar"
-                    :alt="aboutData.fullName"
-                    loading="eager"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
+                <img
+                  :src="aboutData.avatar"
+                  :alt="aboutData.fullName"
+                  class="w-32 h-32 rounded-full mx-auto object-cover mb-4"
+                />
                 <h2 class="text-lg font-medium text-gray-900 dark:text-white mb-1">
                   {{ aboutData.fullName }}
                 </h2>

@@ -46,12 +46,10 @@
                    boxShadow: '0 0 80px rgba(168, 85, 247, 0.5), 0 0 160px rgba(168, 85, 247, 0.3)'
               }"
             ></div>
-            <div class="relative z-10 mb-4 bg-gray-200 dark:bg-gray-700 rounded overflow-hidden">
+            <div class="relative z-10 mb-4">
               <img
                 :src="site.image"
                 :alt="site.title"
-                loading="lazy"
-                decoding="async"
                 class="w-full h-48 object-cover rounded border border-gray-100 dark:border-gray-700"
               />
             </div>

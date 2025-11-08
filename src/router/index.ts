@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import HomeView from '@/pages/HomeView.vue'
+import AboutView from '@/pages/AboutView.vue'
+import ArticlesView from '@/pages/ArticlesView.vue'
+import PortfolioView from '@/pages/PortfolioView.vue'
+import SitesView from '@/pages/SitesView.vue'
+import SponsorView from '@/pages/SponsorView.vue'
 
 // 定义路由配置
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
-    component: () => import('@/pages/HomeView.vue'),
+    component: HomeView,
     meta: {
       title: '首页'
     }
@@ -13,7 +19,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/about',
     name: 'about',
-    component: () => import('@/pages/AboutView.vue'),
+    component: AboutView,
     meta: {
       title: '关于我'
     }
@@ -21,7 +27,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/articles',
     name: 'articles',
-    component: () => import('@/pages/ArticlesView.vue'),
+    component: ArticlesView,
     meta: {
       title: '文章'
     }
@@ -29,7 +35,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/portfolio',
     name: 'portfolio',
-    component: () => import('@/pages/PortfolioView.vue'),
+    component: PortfolioView,
     meta: {
       title: '项目作品'
     }
@@ -37,7 +43,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/sites',
     name: 'sites',
-    component: () => import('@/pages/SitesView.vue'),
+    component: SitesView,
     meta: {
       title: '我的网站'
     }
@@ -45,7 +51,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/sponsor',
     name: 'sponsor',
-    component: () => import('@/pages/SponsorView.vue'),
+    component: SponsorView,
     meta: {
       title: '赞助支持'
     }
@@ -53,7 +59,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
-    component: () => import('@/pages/HomeView.vue'),
+    component: HomeView,
     meta: {
       title: '首页'
     }
