@@ -120,8 +120,7 @@
                    background: 'radial-gradient(circle, rgba(236, 72, 153, 0.6) 0%, rgba(236, 72, 153, 0.3) 30%, rgba(236, 72, 153, 0.15) 60%, transparent 90%)',
                    boxShadow: '0 0 80px rgba(236, 72, 153, 0.5), 0 0 160px rgba(236, 72, 153, 0.3)'
                 }"
-              ></div>
-              <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">兴趣爱好</h3>
+              ></div>              <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">兴趣爱好</h3>
               <div class="relative z-10 flex flex-wrap gap-3">
                 <div
                   v-for="interest in aboutData.interests"
@@ -134,7 +133,70 @@
               </div>
             </div>
 
-            
+            <!-- 技术栈 -->
+            <div 
+              class="relative animate-fade-in-up bg-white/60 dark:bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-gray-300/40 dark:border-white/20 shadow-xl"
+              :ref="el => aboutCardRefs[5] = el as HTMLElement"
+              @mousemove="(event) => handleAboutCardMouseMove(event, 5)"
+              @mouseleave="() => handleAboutCardMouseLeave(5)"
+            >
+              <!-- 鼠标跟随效果 -->
+              <div 
+                v-if="aboutCardEffects[5]?.show"
+                class="absolute w-40 h-40 rounded-full blur-2xl transition-all duration-75 ease-out pointer-events-none z-0"
+                :style="{
+                  left: aboutCardEffects[5]?.x - 80 + 'px',
+                   top: aboutCardEffects[5]?.y - 80 + 'px',
+                   background: 'radial-gradient(circle, rgba(59, 130, 246, 0.6) 0%, rgba(59, 130, 246, 0.3) 30%, rgba(59, 130, 246, 0.15) 60%, transparent 90%)',
+                   boxShadow: '0 0 80px rgba(59, 130, 246, 0.5), 0 0 160px rgba(59, 130, 246, 0.3)'
+                }"
+              ></div>
+              <h3 class="relative z-10 text-xl font-medium text-gray-900 dark:text-white mb-4 drop-shadow-lg">技术栈</h3>
+              <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 语言 -->
+                <div>
+                  <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 text-base drop-shadow-sm">语言</h4>
+                  <div class="flex flex-wrap gap-3">
+                    <div
+                      v-for="lang in aboutData.techStack.languages"
+                      :key="lang.name"
+                      class="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white cursor-default bg-white/40 dark:bg-white/5 backdrop-blur-sm rounded-xl px-3 py-2 border border-gray-200/30 dark:border-white/10"
+                    >
+                      <Icon :icon="lang.icon" class="w-4 h-4 drop-shadow-sm" />
+                      <span class="text-sm drop-shadow-sm">{{ lang.name }}</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 工具 -->
+                <div>
+                  <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 text-base drop-shadow-sm">工具</h4>
+                  <div class="flex flex-wrap gap-3">
+                    <div
+                      v-for="tool in aboutData.techStack.tools"
+                      :key="tool.name"
+                      class="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white cursor-default bg-white/40 dark:bg-white/5 backdrop-blur-sm rounded-xl px-3 py-2 border border-gray-200/30 dark:border-white/10"
+                    >
+                      <Icon :icon="tool.icon" class="w-4 h-4 drop-shadow-sm" />
+                      <span class="text-sm drop-shadow-sm">{{ tool.name }}</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 平台 -->
+                <div>
+                  <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 text-base drop-shadow-sm">平台</h4>
+                  <div class="flex flex-wrap gap-3">
+                    <div
+                      v-for="service in aboutData.techStack.services"
+                      :key="service.name"
+                      class="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white cursor-default bg-white/40 dark:bg-white/5 backdrop-blur-sm rounded-xl px-3 py-2 border border-gray-200/30 dark:border-white/10"
+                    >
+                      <Icon :icon="service.icon" class="w-4 h-4 drop-shadow-sm" />
+                      <span class="text-sm drop-shadow-sm">{{ service.name }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             
             <!-- Education -->
@@ -285,6 +347,7 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 import { MapPin, Mail, Github, Linkedin, Twitter, MessageCircle, Code, Music, Gamepad2 , Camera , Radio , Film } from 'lucide-vue-next'
+import { Icon } from '@iconify/vue'
 import aboutData from '@/data/AboutView.json'
 
 const aboutCardRefs = ref<HTMLElement[]>([])
@@ -322,7 +385,12 @@ const iconMap = {
 }
 
 const getIcon = (iconName: string) => {
-  return iconMap[iconName as keyof typeof iconMap] || MessageCircle
+  // 如果是iconMap中的图标，返回lucide图标
+  if (iconName in iconMap) {
+    return iconMap[iconName as keyof typeof iconMap]
+  }
+  // 否则返回iconify的Icon组件（用于技术栈）
+  return Icon
 }
 </script>
 

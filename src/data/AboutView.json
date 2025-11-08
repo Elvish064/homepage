@@ -89,5 +89,33 @@
     { "name": "Photography", "icon": "camera" },
     { "name": "HAM", "icon": "radio" },
     { "name": "Anime", "icon": "film" }
-  ]
+  ],
+  "techStack": {
+    "languages": [
+      { "name": "HTML", "icon": "catppuccin:xml" },
+      { "name": "Python", "icon": "catppuccin:python" },
+      { "name": "Astro", "icon": "catppuccin:astro" },
+      { "name": "JavaScript", "icon": "catppuccin:javascript" },
+      { "name": "Vue", "icon": "catppuccin:vue" },
+      { "name": "Markdown", "icon": "catppuccin:markdown" },
+      { "name": "pnpm", "icon": "catppuccin:pnpm" }
+    ],
+    "tools": [
+      { "name": "VSCode", "icon": "catppuccin:vscode" },
+      { "name": "Docker", "icon": "catppuccin:docker" },
+      { "name": "Git", "icon": "catppuccin:git" },
+      { "name": "Andino", "icon": "catppuccin:arduino" },
+      { "name": "Photoshop", "icon": "catppuccin:adobe-ps" },
+      { "name": "OBS studio", "icon": "streamline-logos:obs-studio-logo" },
+      { "name": "DaVinci", "icon": "simple-icons:davinciresolve" }
+    ],
+    "services": [
+      { "name": "Cloudflare", "icon": "logos:cloudflare-icon" },
+      { "name": "GitHub", "icon": "tabler:brand-github" },
+      { "name": "Netlify", "icon": "material-icon-theme:netlify" },
+      { "name": "Vercel", "icon": "catppuccin:vercel-ignore" },
+      { "name": "StackoverFlow", "icon": "logos:stackoverflow-icon" },
+      { "name": "1Panel", "icon": "simple-icons:1panel" }
+    ]
+  }
 }
